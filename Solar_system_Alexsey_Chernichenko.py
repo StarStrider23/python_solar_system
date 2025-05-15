@@ -1,11 +1,8 @@
 """
 @author: Alexsey Chernichenko
-The program simulates the Solar system 100 years from now on. It
-does so by solving a system of appropriate differential equations
-that contain gravitational interraction between celestial bodies. 
-Moreover, it shows yet another scenario where a Sun-like star
-appears in the random location between the Earth and the Neptune.
-The program simulates the scenario and how the new star affects
+The program simulates the Solar system 100 years from now on. It does so by solving a system of appropriate differential equations 
+that contain gravitational interraction between celestial bodies. Moreover, it shows yet another scenario where a Sun-like star
+appears in the random location between the Earth and the Neptune. The program simulates the scenario and how the new star affects
 all the bodies in the Solar system. Both scenarios are then plotted.
 
 Notation:
@@ -31,7 +28,7 @@ v_i_x - x component of velocity (at perihelion)
 v_i_y - y component of velocity
 
 """
-#%% Packages and some constants
+" Packages and some constants ----------------------------------"
 
 import numpy as np
 import scipy.constants as const
@@ -42,7 +39,7 @@ G = const.G #gravitational constant, N m^2 kg^-2
 
 t_year = 365.25*24*60*60 #1 year in seconds
 
-#%% Celestial objects
+# Celestial objects
 
 "Sun (S)--------------------------------------------------------"
 
@@ -57,7 +54,7 @@ v_S_y = 0
 r_S = (x_S, y_S) #tuple with coordinate components
 v_S = (v_S_x, v_S_y) #tuple with velocity components
 
-"Mercury (mer)--------------------------------------------------------"
+"Mercury (mer)-----------------------------------------------------"
 
 m_mer = 3.302e23
 
@@ -186,25 +183,11 @@ v_n_y = np.sqrt((G * m_S * (1 + eps_n)) / (a_n * (1 - eps_n)))
 r_n = (x_n, y_n)
 v_n = (v_n_x, v_n_y)
 
-#%% Mooon (moon)
-#Not included, please read the report
-
-m_moon = 7.342e22
-
-x_moon = x_e + 362600e3
-y_moon = 0
-
-eps_moon = 0.0549
-a_moon = 384399e3
-
-v_moon_x = 0
-v_moon_y = v_e_y + np.sqrt((G * m_e * (1 + eps_moon)) / (a_moon * (1 - eps_moon)))
-
-r_moon = (x_moon, y_moon)
-v_moon = (v_moon_x, v_moon_y)
-
-
-#%% Solar system IC
+"Solar system IC ------------------------------------------------------"
+"""
+This scenario contains data for solving the solar system and plotting each of the planets trajectory
+for the next 100 years
+"""
 
 mass = [m_S, m_mer, m_v, m_e, m_m, m_j, m_s, m_u, m_n] #contains masses of all celestial bodies 
 
@@ -224,48 +207,54 @@ space_obj = ['Sun', 'Mercury', 'Venus', 'Earth',
              'Mars', 'Jupiter', 'Saturn', 'Uranus', 
              'Neptune']
 
-#%% Sun-like star (star) and IC
+"Sun-like star (star) and IC --------------------------------------------------"
+"""
+This scenario adds a level of complexity by including another Sun-like star which flies by the
+Solar system and wreaks chaos. It also solves the necessary equations and plots the trajectory
+of the planets and stars. To choose it, uncomment out the lines below and comment out the lines 
+between 'Solar system IC' and 'Sun-like star (star) and IC'
+ """
 
-m_star = m_S #The new star of the same mass as the Sun
+# m_star = m_S #The new star of the same mass as the Sun
+#
+# #Assume that neptune's perihelium is the frontier of the solar system
+# #The star appears in a random location between the Earth and the Neptune
+# rad = np.random.uniform(x_e, x_n)
+# theta = np.random.uniform(0, 2 * np.pi)
+#
+# #x and y components of the new star
+# x_star = rad * np.cos(theta)
+# y_star = rad * np.sin(theta)
+#
+# #This angle corrects the new star's trajectory towards the Earth's orbit
+# #and not towards the Sun
+# phi = np.arcsin(x_e / rad)
+#
+# #The velocity of the new star s.t. it takes 100 years to cross the elliptic
+# #(in this case elliptic is the circle with radius of the neptune's perihelium)
+# V_star = (2 * x_n) / (100 * t_year)
+#
+# #Velocity components. Note the correction.
+# v_star_x = -V_star * np.cos(theta - phi)
+# v_star_y = -V_star * np.sin(theta - phi)
+#
+# r_star = (x_star, y_star)
+# v_star = (v_star_x, v_star_y)
+#
+# mass = [m_S, m_mer, m_v, m_e, m_m, m_j, m_s, m_u, m_n, m_star]
+#
+# start = np.append(np.zeros(0), [r_S, r_mer, r_v, r_e, r_m, r_j, r_s, r_u, r_n, r_star,
+#                                 v_S, v_mer, v_v, v_e, v_m, v_j, v_s, v_u, v_n, v_star])
+#
+# color = ['yellow', 'grey', 'brown', 'green',
+#          'orange', 'tan', 'slategray',
+#          'cyan', 'royalblue', 'black']
+#
+# space_obj = ['Sun', 'Mercury', 'Venus', 'Earth',
+#              'Mars', 'Jupiter', 'Saturn', 'Uranus',
+#              'Neptune', 'Sun-like star']
 
-#Assume that neptune's perihelium is the frontier of the solar system
-#The star appears in a random location between the Earth and the Neptune
-rad = np.random.uniform(x_e, x_n) 
-theta = np.random.uniform(0, 2 * np.pi)
-
-#x and y components of the new star
-x_star = rad * np.cos(theta)
-y_star = rad * np.sin(theta)
-
-#This angle corrects the new star's trajectory towards the Earth's orbit
-#and not towards the Sun 
-phi = np.arcsin(x_e / rad)
-
-#The velocity of the new star s.t. it takes 100 years to cross the elliptic
-#(in this case elliptic is the circle with radius of the neptune's perihelium)
-V_star = (2 * x_n) / (100 * t_year)
-
-#Velocity components. Note the correction.
-v_star_x = -V_star * np.cos(theta - phi)
-v_star_y = -V_star * np.sin(theta - phi)
-
-r_star = (x_star, y_star)
-v_star = (v_star_x, v_star_y)
-
-mass = [m_S, m_mer, m_v, m_e, m_m, m_j, m_s, m_u, m_n, m_star]
-
-start = np.append(np.zeros(0), [r_S, r_mer, r_v, r_e, r_m, r_j, r_s, r_u, r_n, r_star, 
-                                v_S, v_mer, v_v, v_e, v_m, v_j, v_s, v_u, v_n, v_star])
-
-color = ['yellow', 'grey', 'brown', 'green',
-         'orange', 'tan', 'slategray',
-         'cyan', 'royalblue', 'black']
-
-space_obj = ['Sun', 'Mercury', 'Venus', 'Earth', 
-             'Mars', 'Jupiter', 'Saturn', 'Uranus', 
-             'Neptune', 'Sun-like star']
-
-#%% Function, ode solver
+"Function, ode solver--------------------------------------------------------"
 
 mult = 100 #number of years
 time = (0, mult * t_year)
@@ -306,7 +295,7 @@ def accel(t, y):
 #Solves a system of differential equations above to plot trajectories
 sol = solve_ivp(accel, time, start, t_eval=teval, rtol=1e-10, atol=1e-10)
 
-#%% Plotting
+"Plotting--------------------------------------------------------"
 
 #Also knows which scenario is chosen
 plt.figure(figsize=(12,8))
@@ -322,4 +311,3 @@ elif l ==10:
     plt.title('Fly-by of a Sun-like star through the Solar system')
 #    plt.savefig('Chaos100y.png')
 plt.show()
-
