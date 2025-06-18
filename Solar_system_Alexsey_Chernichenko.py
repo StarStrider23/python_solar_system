@@ -314,7 +314,7 @@ ax = fig.add_subplot()
 
 plt.xlabel('x axis (m)')
 plt.ylabel('y axis (m)')
-#plt.legend(labels=space_obj, loc='upper left')
+
 plt.grid(linestyle='--', linewidth=0.5)
 
 if l == 9:
