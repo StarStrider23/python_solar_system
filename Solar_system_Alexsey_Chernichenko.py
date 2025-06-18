@@ -259,8 +259,13 @@ between 'Solar system IC' and 'Sun-like star (star) and IC'
 #              'Neptune', 'Sun-like star']
 
 "Function, ode solver--------------------------------------------------------"
+"""
+The default number of years (mult) below for simulation is set to be to 10, but of course 
+this can be changed to any number larger than 0.
+"""
 
-mult = 10 #number of years
+
+mult = 10 #number of year
 time = (0, mult * t_year)
 teval = np.linspace(0, mult * t_year, 1000)
 
