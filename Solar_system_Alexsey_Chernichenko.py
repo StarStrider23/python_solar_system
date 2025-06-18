@@ -1,12 +1,12 @@
 """
 @author: Alexsey Chernichenko
-The program simulates the Solar system 100 years from now on. It
+The program simulates the Solar system n > 0 years from now on. It
 does so by solving a system of appropriate differential equations
 that contain gravitational interraction between celestial bodies. 
 Moreover, it shows yet another scenario where a Sun-like star
 appears in the random location between the Earth and the Neptune.
 The program simulates the scenario and how the new star affects
-all the bodies in the Solar system. Both scenarios are then plotted.
+all the bodies in the Solar system. Both scenarios are then animated.
 
 Notation:
     
@@ -221,7 +221,7 @@ between 'Solar system IC' and 'Sun-like star (star) and IC'
 
 # m_star = m_S #The new star of the same mass as the Sun
 
-# #Assume that neptune's perihelium is the frontier of the solar system
+# #Assume that Neptune's perihelium is the frontier of the solar system
 # #The star appears in a random location between the Earth and the Neptune
 # rad = np.random.uniform(x_e, x_n)
 # theta = np.random.uniform(0, 2 * np.pi)
