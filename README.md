@@ -44,7 +44,7 @@ which is speed of a body at its perihelion.
 
 Yet another essential parameter is the `semi-major axis` ($a$). It is distance either from aphelion or perihelion to center of ellipse. 
 
-# Result
+# Method
 
 The first step is obviously to write down all the essential constants required for future computations. This is basically all the things written in the theory section.
 
@@ -54,6 +54,22 @@ One could write all the acceleration components explicitly, but that is way too 
 
 To solve a system of differential equations the solve_ivp method is used. As the initial conditions all the objects are aligned on the $x$ axis with their velocities pointed in upwards (i.e. parallel to $y$ axis). Except for the Sun which is located at the origin with zero velocity. 
 
+# Result
+
+## Scenario 1
+
+The first part is about simulating the Solar system only. The interval of simulation is said to be 100 years. The gif below confirms that the trajectories of the celestial bodies in the Solar System are simulated correctly as we observe elliptical orbits around the Sun
+
 <img width="2400" height="1600" alt="scenario_1" src="https://github.com/user-attachments/assets/feb80948-b99e-4e1e-bcdd-08b8e434c868" />
+
+The animation does look decent as . The orbit of the Uranus, however, seems to cease to go through the same points as the planet goes for its second turn. This might be a case with all planets. A closer look at the inner planets confirms it. The Sun, which had no velocity whatsoever, starts to slowly swirl upwards which causes a shift in all orbits, but specifically in the orbits of the inner planets since they are closer and less heavier. This means that the whole system is not in equilibrium.  
+
+Obviously, this simulation is a simplification of reality as there're many more factors that affect the Solar system gravitationally. Nevertheless, the simulation does a pretty good job. 
+
+
+## Scenario 2
+
+In this part, a Sun-like star appears somewhere between the Earth and the Neptune. It has a velocity such that it'd 100 years for the star to cross the ecliptic (in this case, the distance which is equal to 2 perihelion of the Neptune). The direction of its motion is chosen such that it avoids a head-to-head collision with the Sun, but rather goes somewhat to the side so that it passes the Sun as close as the Earth does (roughly). As the initial coordinates of the star are chosen randomly every simulation shows a different picture, yet all of them have a common feature - a total disrupture of the system as some planets fly away from the Solar system. This is a fascinating, but not a surprising result. The gif below demonstrates the consequences of such a scenario.
+
 
 <img width="2400" height="1600" alt="scenario_2" src="https://github.com/user-attachments/assets/ccae72be-74c3-41e8-ac46-03758af85c68" />
