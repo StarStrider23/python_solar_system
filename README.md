@@ -58,18 +58,20 @@ To solve a system of differential equations the solve_ivp method is used. As the
 
 ## Scenario 1
 
-The first part is about simulating the Solar system only. The interval of simulation is said to be 100 years. The gif below confirms that the trajectories of the celestial bodies in the Solar System are simulated correctly as we observe elliptical orbits around the Sun
+The first part is about simulating the Solar system only. The interval of simulation is said to be 100 years. The gif below confirms that the trajectories of the celestial bodies in the Solar System agree qualitatively with the expected orbits as we observe elliptical orbits around the Sun
 
 <img width="2400" height="1600" alt="scenario_1" src="https://github.com/user-attachments/assets/feb80948-b99e-4e1e-bcdd-08b8e434c868" />
-
-The animation does look decent as . The orbit of the Uranus, however, seems to cease to go through the same points as the planet goes for its second turn. This might be a case with all planets. A closer look at the inner planets confirms it. The Sun, which had no velocity whatsoever, starts to slowly swirl upwards which causes a shift in all orbits, but specifically in the orbits of the inner planets since they are closer and less heavier. This means that the whole system is not in equilibrium.  
-
-Obviously, this simulation is a simplification of reality as there're many more factors that affect the Solar system gravitationally. Nevertheless, the simulation does a pretty good job. 
 
 
 ## Scenario 2
 
-In this part, a Sun-like star appears somewhere between the Earth and the Neptune. It has a velocity such that it'd 100 years for the star to cross the ecliptic (in this case, the distance which is equal to 2 perihelion of the Neptune). The direction of its motion is chosen such that it avoids a head-to-head collision with the Sun, but rather goes somewhat to the side so that it passes the Sun as close as the Earth does (roughly). As the initial coordinates of the star are chosen randomly every simulation shows a different picture, yet all of them have a common feature - a total disrupture of the system as some planets fly away from the Solar system. This is a fascinating, but not a surprising result. The gif below demonstrates the consequences of such a scenario.
+In this part, a Sun-like star appears somewhere between the Earth and the Neptune. It has a velocity such that it'd 100 years for the star to cross the ecliptic (in this case, the distance which is equal to 2 perihelion of the Neptune). The direction of its motion is chosen such that it avoids a head-to-head collision with the Sun, but rather goes somewhat to the side so that it passes the Sun as close as the Earth does (roughly). As the initial coordinates of the star are chosen randomly every simulation shows a different picture, yet all of them have a common feature - a total disruption of the system as some planets fly away from the Solar system. This is a fascinating, but not a surprising result. The gif below demonstrates the consequences of such a scenario.
 
 
 <img width="2400" height="1600" alt="scenario_2" src="https://github.com/user-attachments/assets/ccae72be-74c3-41e8-ac46-03758af85c68" />
+
+# Discussion
+
+The results show that the numerical model successfully reproduces the expected behaviour of the Solar system, with the planets following approximately elliptical orbits around the Sun. The second scenario demonstrates how the introduction of a massive passing star can significantly disturb this otherwise stable system, causing some planets to be ejected. The different outcomes between simulations are due to the random initial position of the passing star.
+
+The model is a simplified representation of the Solar system, as it is restricted to two dimensions and relies on several assumptions regarding the initial conditions and the passing star's trajectory. Nevertheless, the simulations effectively demonstrate the complex and sensitive nature of gravitational interactions and the usefulness of numerical methods for studying them.
