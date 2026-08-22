@@ -8,7 +8,7 @@ The program simulates the Solar system 100 years from now on. It does so by solv
 
 # Theory 
 
-Our solar system consists of the Sun, the planets and other smaller objects. For simplicity this project will neglect the last category and deal with the Sun and the planets only. Each body, whether it’s the Sun or any of the planets, experiences gravitational forces from other bodies. The total gravitational force ($\bold{F}_i$) experienced by a body (with index i) can be described as following:
+Our solar system consists of the Sun, the planets and other smaller objects. For simplicity this project will neglect the last category and deal with the Sun and the planets only. Each body, whether it’s the Sun or any of the planets, experiences gravitational forces from other bodies. The total gravitational force ($\textbf{F}_i$) experienced by a body (with index i) can be described as following:
 
 # Result
 
