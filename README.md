@@ -12,7 +12,7 @@ Our solar system consists of the Sun, the planets and other smaller objects. For
 
 $$ \textbf{F}_{i} = \sum^n_{j = 1, j \neq i} \frac{G m_i m_j}{r^3_{ij}}\textbf{r}_{ij} $$
 
-Where G is the gravitational constant, m$_i$ is the ith body's mass, m$_j$ is a mass of another body in the system, r$_{ij}$ is the distance between the bodies and $\textbf{r}_{ij}$ is the corresponding vector.
+Where $G$ is the gravitational constant, $m_i$ is the $i$th body's mass, $m_j$ is a mass of another body in the system, $r_{ij}$ is the distance between the bodies and $\textbf{r}_{ij}$ is the corresponding vector.
 
 As $\textbf{F}_i$ = $m_i\textbf{a}_i$ we can express acceleration of the ith body as
 
