@@ -12,9 +12,9 @@ Our solar system consists of the Sun, the planets and other smaller objects. For
 
 $$ \textbf{F}_{i} = \sum^n_{j = 1, j \neq i} \frac{G m_i m_j}{r^3_{ij}}\textbf{r}_{ij} $$
 
-Where $G$ is the gravitational constant, $m_i$ is the $i$th body's mass, $m_j$ is a mass of another body in the system, $r_{ij}$ is the distance between the bodies and $\textbf{r}_{ij}$ is the corresponding vector.
+Where $G$ is the gravitational constant, $m_i$ is the $I$ th body's mass, $m_j$ is a mass of another body in the system, $r_{ij}$ is the distance between the bodies and $\textbf{r}_{ij}$ is the corresponding vector.
 
-As $\textbf{F}_i$ = $m_i\textbf{a}_i$ we can express acceleration of the ith body as
+As $\textbf{F}_i$ = $m_i\textbf{a}_i$ we can express acceleration of the $i$ th body as
 
 $$ \textbf{a}_i = \sum^n_{j = 1, j \neq i} \frac{G m_j}{r^3_{ij}}\textbf{r}_{ij} $$
 
@@ -48,7 +48,7 @@ Yet another essential parameter is the $\textit{semi-major}$ axis ($a$). It is d
 
 The first step is obviously to write down all the essential constants required for future computations. This is basically all the things written in the theory section.
 
-Since the goal of the project is to plot trajectories of the celestial bodies in the Solar system one needs to solve a system of 8 equations of the form as equation for acceleration. This is essentially a system of differential equations. To proceed one can write a function that takes a time interval and an array (call it $y$) with position and velocities and returns derivative of the array $y$. Each body is then specified by 3 position and 3 velocity components, thus making 6 in total. However, since all the bodies' orbits are (approximately) in the same plane (ecliptic), one can simplify the problem to 2 dimensions. Therefore, each body has now 2 position and 2 velocity components. The array's first half represents position components which are then followed by velocity components for different objects. So: $y$ = ($x_S$, $y_S$, $x_mer$, $y_mer$, ..., $x_j$, $y_j$, ... , $v_S_x$, $v_S_y$, $v_mer_x$, $v_mer_y$, ..., $v_j_x$, $v_j_y$, ...). The array varies depending on the scenario. 
+Since the goal of the project is to plot trajectories of the celestial bodies in the Solar system one needs to solve a system of 8 equations of the form as equation for acceleration. This is essentially a system of differential equations. To proceed one can write a function that takes a time interval and an array (call it $y$) with position and velocities and returns derivative of the array $y$. Each body is then specified by 3 position and 3 velocity components, thus making 6 in total. However, since all the bodies' orbits are (approximately) in the same plane (ecliptic), one can simplify the problem to 2 dimensions. Therefore, each body has now 2 position and 2 velocity components. The array's first half represents position components which are then followed by velocity components for different objects. The array varies depending on the scenario. 
 
 One could write all the acceleration components explicitly, but that is way too laborious and therefore the idea is to use for loops. We'll need a double for loop, one for $i$ and the other $j$. In other words, this is a nested for loop. One thing to note here is the condition $i \neq j$. Otherwise we'd get a factor where a celestial body exerts gravity on itself and this will eventually lead to an error when the code is executed.
 
