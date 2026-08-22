@@ -12,13 +12,13 @@ Our solar system consists of the Sun, the planets and other smaller objects. For
 
 $$ \textbf{F}_{i} = \sum^n_{j = 1, j \neq i} \frac{G m_i m_j}{r^3_{ij}}\textbf{r}_{ij} $$
 
-Where $G$ is the gravitational constant, $m_i$ is the $I$ th body's mass, $m_j$ is a mass of another body in the system, $r_{ij}$ is the distance between the bodies and $\textbf{r}_{ij}$ is the corresponding vector.
+Where $G$ is the gravitational constant, $m_i$ is the  ith body's mass, $m_j$ is a mass of another body in the system, $r_{ij}$ is the distance between the bodies and $\textbf{r}_{ij}$ is the corresponding vector.
 
-As $\textbf{F}_i$ = $m_i\textbf{a}_i$ we can express acceleration of the $i$ th body as
+As $\textbf{F}_i$ = $m_i\textbf{a}_i$ we can express acceleration of the ith body as
 
 $$ \textbf{a}_i = \sum^n_{j = 1, j \neq i} \frac{G m_j}{r^3_{ij}}\textbf{r}_{ij} $$
 
-Having 1 star and 8 planets (planet nine is yet to be discovered) we have 9 objects and therefore in equation above n = 9. 
+Having 1 star and 8 planets (planet nine is yet to be discovered) we have 9 objects and therefore in equation above $n$ = 9. 
 
 The planets, the Sun and all the smaller objects orbit the common center of mass. However, as the center of mass is located inside the Sun it is fairly acceptable to say that everything orbits the Sun. Also it does so in elliptic orbits (that are actually close to circular). A parameter that describes how different an orbit is from circular is called eccentricity ($\epsilon$). If $\epsilon$ = 0 then an orbit is circular. 
 
