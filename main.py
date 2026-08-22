@@ -54,7 +54,7 @@ mult = 10 #number of years
 time = (0, mult * t_year)
 teval = np.linspace(0, mult * t_year, 1000)
 
-scenario = 2
+scenario = 1
 
 if scenario == 1:
     data = miscellaneous.scenario_1
