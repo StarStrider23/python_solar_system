@@ -24,7 +24,7 @@ The planets, the Sun and all the smaller objects orbit the common center of mass
 
 Every orbit has the furthest and the closest point to the Sun. They are called $\textit{aphelion}$ and $\textit{perihelion}$ respectively. Due to the Kepler's second law orbital speed of a body at perihelion is the fastest and at aphelion is slowest. In other words, the closer a body is to the Sun, the faster it moves.
 
-Using the so-called $\textit{Vis-viva equation}$ and the formula for ellipse one can find body's speed at a certain point on orbit . This is required to find speed at perihelion as it will be needed further on.
+Using the so-called `Vis-viva equation` and the formula for ellipse one can find body's speed at a certain point on orbit . This is required to find speed at perihelion as it will be needed further on.
 
 The Vis-Viva equation is:
 
@@ -34,7 +34,7 @@ where $M$ is the mass of the central body (i.e. the Sun) and $r$ is the distance
 
 $$ r = \frac{l}{1 + \epsilon \cos\theta} $$
 
-Where $l$ is a parameter called $\textit{semi-latus}$ rectum which can be expressed as \textit{l} = a(1-$\epsilon^2$).
+Where $l$ is a parameter called `semi-latus` rectum which can be expressed as $l = a(1 - \epsilon^2)$.
 
 Inserting equation above into the Vis-Viva equation with $\theta$ = 0 (i.e. perihelion) and simplifying yields the result below:
 
