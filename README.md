@@ -42,7 +42,7 @@ $$ v = \sqrt{\frac{GM(1+\epsilon)}{a(1-\epsilon)}} $$
 
 which is speed of a body at its perihelion. 
 
-Yet another essential parameter is the $\textit{semi-major}$ axis ($a$). It is distance either from aphelion or perihelion to center of ellipse. 
+Yet another essential parameter is the `semi-major axis` ($a$). It is distance either from aphelion or perihelion to center of ellipse. 
 
 # Result
 
@@ -52,7 +52,7 @@ Since the goal of the project is to plot trajectories of the celestial bodies in
 
 One could write all the acceleration components explicitly, but that is way too laborious and therefore the idea is to use for loops. We'll need a double for loop, one for $i$ and the other $j$. In other words, this is a nested for loop. One thing to note here is the condition $i \neq j$. Otherwise we'd get a factor where a celestial body exerts gravity on itself and this will eventually lead to an error when the code is executed.
 
-To solve a system of differential equations the solve$_$ivp method is used. As the initial conditions all the objects are aligned on the $x$ axis with their velocities pointed in upwards (i.e. parallel to $y$ axis). Except for the Sun which is located at the origin with zero velocity. 
+To solve a system of differential equations the solve_ivp method is used. As the initial conditions all the objects are aligned on the $x$ axis with their velocities pointed in upwards (i.e. parallel to $y$ axis). Except for the Sun which is located at the origin with zero velocity. 
 
 <img width="2400" height="1600" alt="scenario_1" src="https://github.com/user-attachments/assets/feb80948-b99e-4e1e-bcdd-08b8e434c868" />
 
