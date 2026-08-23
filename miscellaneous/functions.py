@@ -88,14 +88,6 @@ def vis_viva(m, a, eps):
 Animate function that plots the trajectory of each celestial body in the solar system over time. 
 """
 
-# def animate(i, sol, ax, space_obj, color):
-    
-#     for j in range(0, len(space_obj)): 
-#         ax.plot(sol.y[2*j][:i], sol.y[2*j+1][:i], color=color[j])
-        
-#     ax.legend(labels=space_obj, loc='upper left')
-
-
 def animate(i, sol, lines):
 
     for j, line in enumerate(lines):
